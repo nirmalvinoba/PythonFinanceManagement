@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API with Database</title>
+    <style>
+        table,th,td{
+            /* border: 3px solid black; */
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+            margin: 0 800px;
+            font-size: 30px;
+        }
+
+        h2{
+            margin: 0 1520px;
+        }
+
+    </style>
+</head>
+<body>
+
+{% block content%}
+
+    <form action="{{url_for('edit',id=bag.ID)}}" method="post" class="form-control">
+        <h1 class="btn btn-dark">Edit User</h1><br><br>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Name" name="name" value="{{bag.Name}}"><br>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Funds" name="funds" value="{{bag.Funds}}"><br>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Invested Amount" name="inves" value="{{bag.Invested}}"><br>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Unitsheld" name="units" value="{{bag.Unitsheld}}"><br>
+
+            <input type="submit" class="btn btn-primary">
+          </div>
+    </form>
+
+{% endblock  %}
+
+</body>
+</html>

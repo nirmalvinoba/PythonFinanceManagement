@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API with Database</title>
+    <style>
+        table,th,td{
+            /* border: 3px solid black; */
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+            margin: 0 100px;
+            font-size: 30px;
+        }
+
+        h2{
+            margin: 0 600px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+{% extends "base.html" %}
+
+{% block content%}
+
+<h1>Finance Management</h1><br><br>
+
+<h2><a href="{{url_for('insert')}}" class="btn btn-dark">Add User</a></h2><br><br>
+<table class="table">
+    <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Fund Name</th>
+        <th>Invested Amount</th>
+        <th>Unitsheld</th>
+        <th>Nav</th>
+        <th>Current Value</th>
+        <th>Growth</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {%for i in box%}
+    <tr>
+        <td>{{i.SNO}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.Fundname}}</td>
+        <td>{{i.Invested}}</td>
+        <td>{{i.Unitsheld}}</td>
+        <td>{{i.Nav}}</td>
+        <td>{{i.Currentvalue}}</td>
+        <td>{{i.Growth}}</td>
+        <td><a href="{{url_for('edit',id=i.SNO)}}" class="btn btn-primary">Edit</a></td>
+        <td><a href="{{url_for('delete',id=i.SNO)}}" class="btn btn-danger">delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+</body>
+</html>
+
+
+
+
+
+
+{% endblock %}

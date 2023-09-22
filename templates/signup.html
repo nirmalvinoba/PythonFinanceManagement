@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API with Database</title>
+    <style>
+        table,th,td{
+            border: 3px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+            margin: px;
+            font-size: 30px;
+        }
+
+        h2{
+            margin: 0 1520px;
+        }
+
+    </style>
+</head>
+<body>
+
+{% extends "base.html" %}
+
+{% block content%}
+
+    <form action="" method="post" class="form-control">
+        <h1>Sign Up</h1><br>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" name="username"><br>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Password" name="password"><br>
+            <input type="submit" class="btn btn-primary">
+          </div>
+    </form>
+
+{% endblock  %}
+
+</body>
+</html>
